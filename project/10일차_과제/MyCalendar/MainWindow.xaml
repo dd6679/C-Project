@@ -1,0 +1,71 @@
+﻿<Window x:Class="MyCalendar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyCalendar"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}" x:Key="btn">
+            <Setter Property="Background" Value="LightSkyBlue"/>
+            
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <TextBox x:Name="textBoxY" Height="23" Width="150" Margin="0,15,0,0" TextWrapping="Wrap" Text="년도를 입력해주세요." DockPanel.Dock="Top" GotFocus="TextBoxYGotFocus"/>
+        <TextBox x:Name="textBoxM" Height="23" Width="150" Margin="0,1,0,0" TextWrapping="Wrap" Text="달을 입력해주세요." DockPanel.Dock="Top" GotFocus="TextBoxMGotFocus"/>
+        <Button x:Name="btn" Content="입력" Height="23" Margin="0,1,0,1" Width="150" Click="ButtonClick" DockPanel.Dock="Top" Style="{StaticResource btn}"/>
+        <Grid x:Name="grid" >
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Margin" Value="20, 10"/>
+                </Style>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="AliceBlue"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Grid.Column="0" Grid.Row="0">
+                <TextBlock>일</TextBlock>
+            </Border>
+            <Border Grid.Column="1" Grid.Row="0">
+                <TextBlock>월</TextBlock>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="0">
+                <TextBlock>화</TextBlock>
+            </Border>
+            <Border Grid.Column="3" Grid.Row="0">
+                <TextBlock>수</TextBlock>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="0">
+                <TextBlock>목</TextBlock>
+            </Border>
+            <Border Grid.Column="5" Grid.Row="0">
+                <TextBlock>금</TextBlock>
+            </Border>
+            <Border Grid.Column="6" Grid.Row="0">
+                <TextBlock>토</TextBlock>
+            </Border>
+
+        </Grid>
+    </DockPanel>
+</Window>

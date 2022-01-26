@@ -1,0 +1,82 @@
+﻿<Window x:Class="FileManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:FileManager" xmlns:local1="clr-namespace:FileManager.ViewModels"
+        mc:Ignorable="d"
+        Title="파일 관리자" Height="500" Width="700">
+    <Window.DataContext>
+        <local1:MainWindowVM/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style TargetType="{x:Type ListBox}">
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Height" Value="300"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Background" Value="DarkBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <DataTemplate DataType="{x:Type local:Directories}">
+            <TextBlock Text="{Binding DirectoryName}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:Files}">
+            <TextBlock Text="{Binding FileName}"/>
+        </DataTemplate>
+    </Window.Resources>
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,20,0,20">
+            <Label Content="현재 위치 : "/>
+            <TextBox Width="500" Text="{Binding CurrentPath, UpdateSourceTrigger=PropertyChanged}">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding InputPath}" Key="Enter"/>
+                </TextBox.InputBindings>
+            </TextBox>
+        </StackPanel>
+
+        <Grid DockPanel.Dock="Left" Width="350">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ListBox x:Name="xDirectoryList" Grid.ColumnSpan="3" ItemsSource="{Binding DirectoryList}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DisplayFile}" CommandParameter="{Binding ElementName=xDirectoryList, Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ListBox>
+            <Button Grid.Column="2" Grid.Row="1" Content="디렉토리생성" Click="CreateDirectory_Click"/>
+        </Grid>
+        
+        <Grid DockPanel.Dock="Right">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ListBox x:Name="xFileList" Grid.ColumnSpan="3" ItemsSource="{Binding FileList}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectFile}" CommandParameter="{Binding ElementName=xFileList, Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ListBox>
+            <Button Grid.Column="1" Grid.Row="1" Content="파일복사" Click="CopyFile_Click"/>
+            <Button Grid.Column="2" Grid.Row="1" Content="닫기" Click="Window_Closing"/>
+        </Grid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,7 @@
+D:\practice\project\6일차_과제\Barista\bin\Debug\Barista.exe.config
+D:\practice\project\6일차_과제\Barista\bin\Debug\Barista.exe
+D:\practice\project\6일차_과제\Barista\bin\Debug\Barista.pdb
+D:\practice\project\6일차_과제\Barista\obj\Debug\Barista.csproj.AssemblyReference.cache
+D:\practice\project\6일차_과제\Barista\obj\Debug\Barista.csproj.CoreCompileInputs.cache
+D:\practice\project\6일차_과제\Barista\obj\Debug\Barista.exe
+D:\practice\project\6일차_과제\Barista\obj\Debug\Barista.pdb

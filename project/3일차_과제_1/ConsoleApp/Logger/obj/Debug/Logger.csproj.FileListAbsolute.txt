@@ -1,0 +1,7 @@
+D:\practice\project\3일차_과제_1\ConsoleApp\Logger\bin\Debug\Logger.exe.config
+D:\practice\project\3일차_과제_1\ConsoleApp\Logger\bin\Debug\Logger.exe
+D:\practice\project\3일차_과제_1\ConsoleApp\Logger\bin\Debug\Logger.pdb
+D:\practice\project\3일차_과제_1\ConsoleApp\Logger\obj\Debug\Logger.csproj.AssemblyReference.cache
+D:\practice\project\3일차_과제_1\ConsoleApp\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache
+D:\practice\project\3일차_과제_1\ConsoleApp\Logger\obj\Debug\Logger.exe
+D:\practice\project\3일차_과제_1\ConsoleApp\Logger\obj\Debug\Logger.pdb

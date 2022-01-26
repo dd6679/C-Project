@@ -1,0 +1,8 @@
+D:\practice\project\6주차 과제\MainTree\MainTree2\bin\Debug\MainTree2.exe.config
+D:\practice\project\6주차 과제\MainTree\MainTree2\obj\Debug\ClientProgram.csprojResolveAssemblyReference.cache
+D:\practice\project\6주차 과제\MainTree\MainTree2\obj\Debug\Views\ContentView.g.cs
+D:\practice\project\6주차 과제\MainTree\MainTree2\obj\Debug\Views\MainWindow.g.cs
+D:\practice\project\6주차 과제\MainTree\MainTree2\obj\Debug\App.g.cs
+D:\practice\project\6주차 과제\MainTree\MainTree2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\practice\project\6주차 과제\MainTree\MainTree2\obj\Debug\MainTree2_MarkupCompile.cache
+D:\practice\project\6주차 과제\MainTree\MainTree2\obj\Debug\MainTree2_MarkupCompile.lref

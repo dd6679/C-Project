@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginApp", "LoginApp\LoginApp.csproj", "{369F4E2D-A761-4897-8EC3-B7BC7F03996D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Mvvm.Bindables", "Library.Mvvm.Bindables\Library.Mvvm.Bindables.csproj", "{0FEED588-BC8B-4AF4-8008-F57A53485B82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{369F4E2D-A761-4897-8EC3-B7BC7F03996D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{369F4E2D-A761-4897-8EC3-B7BC7F03996D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{369F4E2D-A761-4897-8EC3-B7BC7F03996D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{369F4E2D-A761-4897-8EC3-B7BC7F03996D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FEED588-BC8B-4AF4-8008-F57A53485B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FEED588-BC8B-4AF4-8008-F57A53485B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FEED588-BC8B-4AF4-8008-F57A53485B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FEED588-BC8B-4AF4-8008-F57A53485B82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DDC9B9AF-AAF2-4DC5-9CD1-B877B82B00E0}
+	EndGlobalSection
+EndGlobal

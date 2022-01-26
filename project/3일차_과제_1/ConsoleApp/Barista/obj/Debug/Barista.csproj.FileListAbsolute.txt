@@ -1,0 +1,7 @@
+D:\practice\project\3일차_과제_1\ConsoleApp\Barista\obj\Debug\Barista.csproj.AssemblyReference.cache
+D:\practice\project\3일차_과제_1\ConsoleApp\Barista\obj\Debug\Barista.csproj.CoreCompileInputs.cache
+D:\practice\project\3일차_과제_1\ConsoleApp\Barista\bin\Debug\Barista.exe.config
+D:\practice\project\3일차_과제_1\ConsoleApp\Barista\bin\Debug\Barista.exe
+D:\practice\project\3일차_과제_1\ConsoleApp\Barista\bin\Debug\Barista.pdb
+D:\practice\project\3일차_과제_1\ConsoleApp\Barista\obj\Debug\Barista.exe
+D:\practice\project\3일차_과제_1\ConsoleApp\Barista\obj\Debug\Barista.pdb

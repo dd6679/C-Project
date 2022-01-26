@@ -1,0 +1,150 @@
+﻿<Window x:Class="DataBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBinding"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <local:Families x:Key="Families" >
+            <local:Family FamilyName="덕선이네">
+                <local:Family.Members>
+                    <local:People>
+                        <local:Person Name="성동일" Age="50">
+                            <local:Person.Traits>
+                                <local:Traits>
+                                    <local:Trait Description="쾌활"/>
+                                    <local:Trait Description="추함"/>
+                                    <local:Trait Description="발랄"/>
+                                    <local:Trait Description="우울"/>
+                                </local:Traits>
+                            </local:Person.Traits>
+                        </local:Person>
+                        <local:Person Name="이일화" Age="44">
+                            <local:Person.Traits>
+                                <local:Traits>
+                                    <local:Trait Description="쾌활"/>
+                                    <local:Trait Description="발랄"/>
+                                </local:Traits>
+                            </local:Person.Traits>
+                        </local:Person>
+
+                        <local:Person Name="성보라" Age="21">
+                            <local:Person.Traits>
+                                <local:Traits>
+                                    <local:Trait Description="괴팍"/>
+                                </local:Traits>
+                            </local:Person.Traits>
+                        </local:Person>
+
+                        <local:Person Name="성덕선" Age="18">
+                            <local:Person.Traits>
+                                <local:Traits>
+                                    <local:Trait Description="발랄"/>
+                                    <local:Trait Description="순진"/>
+                                </local:Traits>
+                            </local:Person.Traits>
+                        </local:Person>
+                        
+                        <local:Person Name="성노을" Age="17">
+                            <local:Person.Traits>
+                                <local:Traits>
+                                    <local:Trait Description="어리버리"/>
+                                    <local:Trait Description="순진"/>
+                                </local:Traits>
+                            </local:Person.Traits>
+                        </local:Person>
+                        
+                    </local:People>
+                </local:Family.Members>
+            </local:Family>
+
+            <local:Family FamilyName="정환이네">
+                <local:Family.Members>
+                    <local:People>
+                        <local:Person Name="김성균" Age="44"/>
+                        <local:Person Name="라미란" Age="45"/>
+                        <local:Person Name="김정봉" Age="23"/>
+                        <local:Person Name="김정환" Age="18"/>
+                    </local:People>
+                </local:Family.Members>
+            </local:Family>
+            
+            <local:Family FamilyName="택이네">
+                <local:Family.Members>
+                    <local:People>
+                        <local:Person Name="최무성" Age="44"/>
+                        <local:Person Name="김선영" Age="42"/>
+                        <local:Person Name="성선우" Age="18"/>
+                        <local:Person Name="최택" Age="18"/>
+                        <local:Person Name="성진주" Age="6"/>  
+                    </local:People>
+                </local:Family.Members>
+            </local:Family>
+        </local:Families>
+
+        <!--<DataTemplate DataType ="{x:Type local:Family}">
+            <TextBlock Text="{Binding Path=FamilyName}" />
+        </DataTemplate>-->
+        <HierarchicalDataTemplate DataType="{x:Type local:Family}" ItemsSource="{Binding Path=Members}">
+            <TextBlock Text="{Binding Path=FamilyName}" />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate DataType="{x:Type local:Person}" ItemsSource="{Binding Path=Traits}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=Name}" />
+                <TextBlock Text="(나이: " />
+                <TextBlock Text="{Binding Path=Age}" />
+                <TextBlock Text=" )" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+
+        <DataTemplate DataType="{x:Type local:Trait}">
+            <TextBlock Text="{Binding Path=Description}" />
+        </DataTemplate>
+    </Window.Resources>
+
+    <TreeView DataContext="{StaticResource Families}">
+        <TreeViewItem ItemsSource="{Binding}" Header="응답하라 가족들" />
+    </TreeView>
+    <!--<Grid DataContext="{StaticResource Families}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock>Families: </TextBlock>
+        <ListBox Grid.Row="1" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=FamilyName}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Grid.Column="1">가족인원:</TextBlock>
+        <ListBox Grid.Column="1" Grid.Row="1" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding Members}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                    <TextBlock Text="{Binding Path=Name}" />
+                        (<TextBlock Text="{Binding Path=Age}"/>)
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Grid.Column="2">성격:</TextBlock>
+        <ListBox Grid.Column="2" Grid.Row="1" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding Path=Members/Traits}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=Description}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>-->
+</Window>

@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientProgram", "ClientProgram\ClientProgram.csproj", "{72AB2569-8A9B-4450-B8DC-043541E5E3DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Certification", "Certification", "{2C1D7100-3443-4164-A57E-035789A81605}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientProgramming", "ClientProgramming", "{7B2817F9-4340-4DB0-B554-EE106E994DB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientProgram", "D:\practice\project\주_5주차_과제\클라이언트 프로그래밍\ClientProgram\ClientProgram.csproj", "{DC1A60D7-10F6-44E2-B76A-4CF76D85D511}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PacketParsing", "PacketParsing", "{28D9C9C3-AA3B-476C-855F-6A14E3328CCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientPacketParsing", "ClientPacketParsing\ClientPacketParsing.csproj", "{DB79DCAC-2D85-4FA7-A9B1-072C6C073089}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Socket.Net", "Library.Socket.Net\Library.Socket.Net.csproj", "{63B297C5-494B-4FB0-9E2A-733C7714C611}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerProgram", "D:\practice\project\주_5주차_과제\인증 실습\ServerProgram\ServerProgram.csproj", "{5E1AAE4F-3E5B-42A7-81B8-96C508CF502E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72AB2569-8A9B-4450-B8DC-043541E5E3DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72AB2569-8A9B-4450-B8DC-043541E5E3DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72AB2569-8A9B-4450-B8DC-043541E5E3DC}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{72AB2569-8A9B-4450-B8DC-043541E5E3DC}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DC1A60D7-10F6-44E2-B76A-4CF76D85D511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC1A60D7-10F6-44E2-B76A-4CF76D85D511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC1A60D7-10F6-44E2-B76A-4CF76D85D511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC1A60D7-10F6-44E2-B76A-4CF76D85D511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB79DCAC-2D85-4FA7-A9B1-072C6C073089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB79DCAC-2D85-4FA7-A9B1-072C6C073089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB79DCAC-2D85-4FA7-A9B1-072C6C073089}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB79DCAC-2D85-4FA7-A9B1-072C6C073089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63B297C5-494B-4FB0-9E2A-733C7714C611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B297C5-494B-4FB0-9E2A-733C7714C611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B297C5-494B-4FB0-9E2A-733C7714C611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B297C5-494B-4FB0-9E2A-733C7714C611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E1AAE4F-3E5B-42A7-81B8-96C508CF502E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E1AAE4F-3E5B-42A7-81B8-96C508CF502E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E1AAE4F-3E5B-42A7-81B8-96C508CF502E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E1AAE4F-3E5B-42A7-81B8-96C508CF502E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72AB2569-8A9B-4450-B8DC-043541E5E3DC} = {2C1D7100-3443-4164-A57E-035789A81605}
+		{DC1A60D7-10F6-44E2-B76A-4CF76D85D511} = {7B2817F9-4340-4DB0-B554-EE106E994DB8}
+		{DB79DCAC-2D85-4FA7-A9B1-072C6C073089} = {28D9C9C3-AA3B-476C-855F-6A14E3328CCC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDD28251-61E4-4948-AF36-471761393770}
+	EndGlobalSection
+EndGlobal

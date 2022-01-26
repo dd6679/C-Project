@@ -1,0 +1,107 @@
+﻿<Window x:Class="Binding1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Binding1"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="250" Width="325">
+    <Window.Resources>
+        <local:People x:Key="Family">
+            <local:Person Name="Tom" Age="11" />
+            <local:Person Name="John" Age="12" />
+            <local:Person Name="Melissa" Age="38" />
+        </local:People>
+
+        <local:NamedAges x:Key="NamedAgeLookup">
+            <local:NamedAge NameForAge="영살" AgeId="0" />
+            <local:NamedAge NameForAge="한살" AgeId="1" />
+            <local:NamedAge NameForAge="두살" AgeId="2" />
+            <local:NamedAge NameForAge="세살" AgeId="3" />
+            <local:NamedAge NameForAge="네살" AgeId="4" />
+            <local:NamedAge NameForAge="다섯살" AgeId="5" />
+            <local:NamedAge NameForAge="여섯살" AgeId="6" />
+            <local:NamedAge NameForAge="일곱살" AgeId="7" />
+            <local:NamedAge NameForAge="여덟살" AgeId="8" />
+            <local:NamedAge NameForAge="아홉살" AgeId="9" />
+            <local:NamedAge NameForAge="열살" AgeId="10" />
+            <local:NamedAge NameForAge="열한살" AgeId="11" />
+            <local:NamedAge NameForAge="열두살" AgeId="12" />
+            <local:NamedAge NameForAge="열세살" AgeId="13" />
+            <local:NamedAge NameForAge="열네살" AgeId="14" />
+            <local:NamedAge NameForAge="열다섯살" AgeId="15" />
+            <local:NamedAge NameForAge="열여섯살" AgeId="16" />
+            <local:NamedAge NameForAge="열일곱살" AgeId="17" />
+            <local:NamedAge NameForAge="열여덟살" AgeId="18" />
+            <local:NamedAge NameForAge="열아홉살" AgeId="19" />
+            <local:NamedAge NameForAge="스무살" AgeId="20" />
+            <local:NamedAge NameForAge="서른다섯살" AgeId="35" />
+            <local:NamedAge NameForAge="서른여섯살" AgeId="36" />
+            <local:NamedAge NameForAge="서른일곱살" AgeId="37" />
+            <local:NamedAge NameForAge="서른여덟살" AgeId="38" />
+            <local:NamedAge NameForAge="서른아홉살" AgeId="39" />
+            <local:NamedAge NameForAge="마흔살" AgeId="40" />
+        </local:NamedAges>
+
+        <Style TargetType="{x:Type TextBlock}" >
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Width" Value="58" />
+        </Style>
+
+        <Style TargetType="{x:Type ListBox}">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+        <DataTemplate DataType="{x:Type local:Person}">
+            <TextBlock>
+                <TextBlock Text="{Binding Name}" />
+                ( 나이:  <TextBlock Text="{Binding Age}" /> )
+            </TextBlock>
+        </DataTemplate>
+        
+    </Window.Resources>
+    <Grid DataContext="{StaticResource Family}" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock  Grid.Column="0" Text="이름"/>
+        <TextBox  Grid.Column="1" Text="{Binding Name}" />
+        <TextBlock  Grid.Row="1" Grid.Column="0" Text="나이"/>
+        <!--<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Age}" />-->
+        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{StaticResource NamedAgeLookup}" DisplayMemberPath="NameForAge" SelectedValuePath="AgeId" SelectedValue="{Binding Path=Age}"/>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <Button  Content="생일" Click="Button_Click"/>
+            <Button x:Name="backButton" Content="&lt;" Click="backButton_Click"/>
+            <Button x:Name="foreButton" Content="&gt;" Click="foreButton_Click"/>
+        </StackPanel>
+        <ListBox x:Name="familyList"
+                 Grid.Row="3" Grid.Column="1" 
+                 IsSynchronizedWithCurrentItem="True"
+                 ItemsSource="{Binding}"
+                 SelectedValuePath="Age" 
+                 MouseDoubleClick="ListBox_MouseDoubleClick">
+        </ListBox>
+    </Grid>
+</Window>

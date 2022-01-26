@@ -1,0 +1,7 @@
+D:\practice\project\6주차 과제\MainTree\Library.Client.Net\bin\Debug\Library.Client.Net.dll
+D:\practice\project\6주차 과제\MainTree\Library.Client.Net\bin\Debug\Library.Client.Net.pdb
+D:\practice\project\6주차 과제\MainTree\Library.Client.Net\bin\Debug\Newtonsoft.Json.dll
+D:\practice\project\6주차 과제\MainTree\Library.Client.Net\bin\Debug\Newtonsoft.Json.xml
+D:\practice\project\6주차 과제\MainTree\Library.Client.Net\obj\Debug\Library.Client.Net.csprojResolveAssemblyReference.cache
+D:\practice\project\6주차 과제\MainTree\Library.Client.Net\obj\Debug\Library.Client.Net.dll
+D:\practice\project\6주차 과제\MainTree\Library.Client.Net\obj\Debug\Library.Client.Net.pdb

@@ -1,0 +1,111 @@
+﻿<Window x:Class="MainTree2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ie="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:local="clr-namespace:MainTree2.Views" xmlns:model="clr-namespace:MainTree2.Models" xmlns:vm="clr-namespace:MainTree2.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1080" Background="LightYellow">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <i:InvokeCommandAction Command="{Binding CloseWindowCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Window.Resources>
+        <model:TreeNodeItem x:Key="Directories"/>
+        <HierarchicalDataTemplate DataType="{x:Type model:TreeNodeItem}"
+                                  ItemsSource="{Binding Path=LeafMembers}">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="15" Source="\Assets\group1.png"/>
+                <TextBlock Text="{Binding Path=Name}"/>
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <DataTemplate DataType="{x:Type model:LeafNodeItem}">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="15" Source="\Assets\device-dom-stream.png"/>
+                <TextBlock Text="{Binding Path=Name}"/>
+            </StackPanel>
+        </DataTemplate>
+        <local:ContentView x:Key="ContentViewControl"/>
+    </Window.Resources>
+
+    <Grid>
+        <Canvas x:Name="OverlayCanvas" Panel.ZIndex="5"/>
+        <Grid Margin="20" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ComboBox x:Name="xComboBox" VerticalAlignment="Top" ItemsSource="{Binding Path=Root}" DisplayMemberPath="Key">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding Path = SelectionChangedCommand}" CommandParameter="{Binding ElementName=xComboBox, Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+
+            <TreeView x:Name="xTreeList" Grid.Row="1" ItemsSource="{Binding DirectoryList}" Margin="0, 10" AllowDrop="True">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectedItemChanged">
+                        <i:InvokeCommandAction Command="{Binding DisplayDataInfo}" CommandParameter="{Binding ElementName=xTreeList, Path=SelectedValue}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type TreeViewItem}">
+                        <EventSetter Event="TreeViewItem.MouseMove" Handler="treeView_MouseMove"/>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+            </TreeView>
+            
+            <Border Grid.Row="2" BorderThickness="1" BorderBrush="Gray">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Selected:"/>
+                        <Label x:Name="NickTextBox" Content="{Binding Nick}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                        <Label Content="DeviceSrial:"/>
+                        <Label x:Name="DevTextBox" Content="{Binding Dev}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2">
+                        <Label Content="Channel Serial:"/>
+                        <Label x:Name="DchTextBox" Content="{Binding Dch}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="3">
+                        <Label Content="Media Serial:"/>
+                        <Label x:Name="DchmTextBox" Content="{Binding Dchm}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Grid x:Name="xGrid" Grid.Column="1" Grid.RowSpan="3" AllowDrop="True" Margin="5,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <local:ContentView/>
+                <local:ContentView Grid.Column="1"/>
+                <local:ContentView Grid.Row="1"/>
+                <local:ContentView Grid.Column="1" Grid.Row="1"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
